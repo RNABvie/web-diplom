@@ -1,0 +1,20 @@
+{% extends "comps/base.html" %}
+{% block title %}Вакансии{% endblock title %}
+{% block main %}
+<div style="min-height:500px;">
+    {% if user.is_authenticated %}
+        {% if user.groups.filter %}
+            <div style="margin-bottom: 10px;"><a class="vacanln" href="{% url 'vacan_create' %}">Добавить вакансию</a></div>
+        {% endif %}
+    {% endif %}
+    <div class="idea"  style="min-height:450px;max-height:900px;overflow:scroll;overflow-x:hidden;">
+        {% for vacan in vacancy %}
+            <div style="margin-bottom:20px;" class="title">{{ vacan.job }}<a href="{{ vacan.id }}">Перейти..</a><span class="authorspan"><i> {{ vacan.date_time }}</i></span></div>
+
+        {% empty %}
+            <div>Вакансий Нет!</div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock main %}

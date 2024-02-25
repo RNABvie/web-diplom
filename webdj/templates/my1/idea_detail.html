@@ -1,0 +1,49 @@
+{% extends "comps/base.html" %}
+{% load my1_filters_and_tags %}
+{% block title %}{{ idea.title }}{% endblock title %}
+
+{% block main %}
+<div>
+    <div class="idea">
+        <div class="title">{{ idea.title }}<span class="authorspan"><i> идея от - {{ idea.author }}</i></span></div>
+        <div class="ideaflex">
+            <div class="description"><pre style="text-wrap: balance;font-size: 16px;font-family:sans-serif;">{{ idea.description }}</pre></div>
+            {% if idea.image %}
+                <div class="divimg"><img class="imgidea" src="{{ idea.image.url }}" alt="idea image"></div>
+            {% else %}
+                <div class="divnoimg"><img class="imgidea" src="/static/img/no__img.jpg" alt="idea image"></div>
+            {% endif %}
+        </div>
+        {% if idea.file %}
+            <div class="fileid">Есть прикрепленный файл: <a style="padding-left:10px;text-decoration: underline;color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));" href="{{ idea.file.url }}" download>  Скачать</a></div>
+        {% endif %}
+        <div class="date">Опубликовано: {{ idea.date_time }}</div>
+      <hr>
+      <div style="font-weight:600;color: blue;font-size:13px;" >oценка: {{ likes.total }}</div>
+      <div>
+          {% if user.is_authenticated %}
+                {% i_liked_idea idea.id as my %}
+                <a href="{% url 'idea_rating' idea.id 'лайк' %}"
+                    {% if my == 1 %}
+                       class="btn btn-success d-inline-flex align-items-center m-1 p-1">
+                    {% else %}
+                       class="btn btn-outline-success d-inline-flex align-items-center m-1 p-1">
+                    {% endif %}
+                    <i class='bx bx-like'>{{ ratings.like }}</i>{{ likes.like }}
+                </a>
+
+                <a href="{% url 'idea_rating' idea.id 'дизлайк' %}"
+
+                    {% if my == -1 %}
+                        class="btn btn-danger d-inline-flex align-items-center m-1 p-1">
+                    {% else %}
+                        class="btn btn-outline-danger d-inline-flex align-items-center m-1 p-1">
+                    {% endif %}
+                    <i class='bx bx-dislike'>{{ ratings.dislike }}</i>{{ likes.dislike }}
+                </a>
+            {% endif %}
+      </div>
+    </div>
+</div>
+
+{% endblock main %}

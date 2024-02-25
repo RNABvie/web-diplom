@@ -1,0 +1,238 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-image: url("../img/bg__image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    width: 75%;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 30px;
+    margin-bottom: 10%;
+
+}
+
+.imgidea {
+    width: 100%;
+}
+
+.idea {
+    padding: 10px;
+    border: 2px solid lightblue;
+    border-radius: 10px;
+    margin-bottom: 35px;
+}
+
+.title{
+    border-bottom: 1px solid black;
+    font-size: 23px;
+    letter-spacing: 4px;
+}
+
+nav div a {
+    text-decoration: none;
+    font-color: black;
+    border-bottom: 2px solid blue;
+}
+
+.labellog {
+    border-bottom: 2px solid lightblue;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.log {
+    width: 50%;
+    margin: auto;
+    margin-bottom: 25px;
+    background-color: aliceblue;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding-left: 5px;
+
+    margin-left: 25%
+}
+
+.btnlog {
+    background-color: #006d91;
+    border-radius: 15px;
+    border: 1px solid lightblue;
+    width: 130px;
+    margin: auto;
+    color: white;
+    font-weight: 600;
+}
+
+footer{
+
+
+}
+
+.crt {
+    border-bottom: 1px solid;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.jobIn {
+    margin-top: 30px;
+}
+
+.fileInput {
+    font-size: 14px;
+}
+
+.comBtn{
+    width: fit-content;
+    margin-top: 20px;
+    background-color: blue;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 5px;
+}
+
+.comIn {
+    margin:0px;
+    margin-top:20px;
+    width:100%;
+    height:35px;
+    padding:5px;
+    border:1px solid blue;
+    border-radius:7px 0 0 7px;
+}
+
+.crtBtn {
+    margin-top: 20px;
+    height: 33px;
+    width: 100%;
+    text-align: center;
+    background-color: blue!important;
+    color: white;
+    border-radius: 100px;
+}
+
+.txtArea {
+    min-width: 100%;
+    padding: 3px;
+    border: 1px solid blue;
+    margin-top: 5px;
+}
+
+
+.msgUser {
+    font-size: 19px;
+    letter-spacing: 3px;
+    color: blue;
+}
+
+.msgContent {
+    text-indent: 40px;
+    border-bottom: 2px solid gray;
+    margin-bottom: 17px;
+}
+
+.jobInput {
+    margin-top: 5px;
+    border: 1px solid blue;
+    padding: 3px;
+    width: 100%;
+}
+
+.vacanln {
+    border: 1px solid blue;
+    border-radius: 6px;
+    color: blue;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 18px;
+    padding: 5px;
+    vertical-align: text-top;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.title a{
+    background-color: blue;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 15px;
+    padding: 5px;
+    vertical-align: text-top;
+    letter-spacing: 1px;
+    font-weight: 600;
+
+}
+
+.authorspan{
+    color: blue;
+    font-size: 18px;
+    float: right;
+}
+
+.ideaflex {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20px;
+    padding-left: 10px;
+}
+
+.description{
+    font-size: 16px;
+    width: 56%;
+    text-indent: 20px;
+    margin-bottom: 35px;
+}
+
+.page-item {
+     height: 37px;
+     width: 37px;
+     align-self: center;
+}
+
+.page-item a{
+     padding: 7px;
+     width: 37px;
+     text-align: center;
+}
+
+.divimg{
+    width: 435px;
+    border: 2px solid blue;
+    padding: 3px;
+}
+
+.divnoimg{
+    width: 525px;
+    border: 1px solid blue;
+    padding: 2px;
+}
+
+.fileid{
+    display: flex;
+    font-size: 18px;
+
+}
+
+.date{
+    display: flex;
+    justify-content: center;
+
+}

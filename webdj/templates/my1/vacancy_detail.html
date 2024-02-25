@@ -1,0 +1,22 @@
+{% extends "comps/base.html" %}
+{% load my1_filters_and_tags %}
+{% block title %}{{ vacan.job }}{% endblock title %}
+
+{% block main %}
+<div style="min-height:500px;">
+    <div class="idea">
+        <div class="title">{{ vacan.job }}<span class="authorspan"><i> {{ vacan.date_time }}</i></span></div>
+        <div class="ideaflex">
+            <div class="description" style="width:900px;"><pre style="text-wrap: balance;font-size: 16px;font-family:sans-serif;">{{ vacan.description }}</pre></div>
+        </div>
+        {% if idea.file %}
+            <div class="fileid">Есть прикрепленный файл: <a style="padding-left:10px;text-decoration: underline;color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));" href="{{ vacan.file.url }}" download>  Скачать</a></div>
+        {% endif %}
+        <hr>
+        <div class="ideaflex">
+            <div class="" style=""><pre style="text-wrap: balance;font-size: 16px;font-family:sans-serif;">{{ vacan.contacts }}</pre></div>
+        </div>
+    </div>
+</div>
+
+{% endblock main %}

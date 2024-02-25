@@ -1,0 +1,23 @@
+{% extends "comps/base.html" %}
+{% block title %}Бизнес Идеи{% endblock title %}
+{% block main %}
+<div style="min-height:410px;">
+    <div style="margin-bottom: 10px;"><a class="vacanln" href="{% url 'busid_create' %}">Добавьте вашу идею</a></div>
+{% for idea in current_page %}
+    <div class="idea">
+        <div class="title">{{ idea.title }}<a href="{{ idea.id }}">Открыть..</a><span class="authorspan"><i> идея от - {{ idea.author }}</i></span></div>
+        <div class="ideaflex">
+            <div class="description"><pre style="text-wrap: balance;font-size: 16px;font-family:sans-serif;">{{ idea.description|truncatewords:40 }}</pre></div>
+            {% if idea.image %}
+                <div class="divimg"><img class="imgidea" src="{{ idea.image.url }}" alt="idea image"></div>
+            {% else %}
+                <div class="divnoimg"><img class="imgidea" src="/static/img/no__img.jpg" alt="idea image"></div>
+            {% endif %}
+        </div>
+        <div class="date">Опубликовано: {{ idea.date_time }}</div>
+    </div>
+{% endfor %}
+{% if current_page %}<div class="col-md-6 myP" style="width: 100%;height: 40px;">{% include "comps/paginator.html" %}</div>{% endif %}
+</div>
+
+{% endblock main %}

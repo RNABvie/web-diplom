@@ -1,0 +1,37 @@
+{% extends "comps/base.html" %}
+{% block title %}Вход в аккаунт{% endblock title %}
+
+{% block main %}
+<div style="width:77%;padding:35px;margin:auto;min-height:500px;line-height:3;">
+  <form action="{% url 'log_in' %}" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+    <div style="font-size: 21px;width: fit-content;margin:auto;margin-top:-30px;">Введите данные своего аккаунта</div>
+    {% if error %}
+      <div style="font-size:15px;border-radius:7px;width:fit-content;margin:auto;font-weight:600;background-color:red;color:white;padding:5px;" class="errorForm">{{ error }}</div>
+    {% endif %}
+    <div class="row">
+      <div class="form-group">
+        <div class="form-group">
+          <label for="title" class="labellog">Your Username</label>
+          {% if error %}
+            <input type="text" name="userLog" id="title" style="border-color:red;" class="log" placeholder="type.." value="" required />
+          {% else %}
+            <input type="text" name="userLog" id="title" class="log" placeholder="type.." value="" required />
+          {% endif %}
+          </div>
+          <div class="form-group">
+            <label for="DefaultFile" class="labellog">Your Password</label>
+            {% if error %}
+              <input type="password" name="pwdLog" id="DefaultFile" class="log" style="border-color:red;" placeholder="type.." required/>
+            {% else %}
+              <input type="password" name="pwdLog" id="DefaultFile" class="log" placeholder="type.." required/>
+            {% endif %}
+          </div>
+        </div>
+        <div class="btnlog" align="center">
+            <button type="submit" name="Log" class="">Log in</button>
+        </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

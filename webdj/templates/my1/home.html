@@ -1,0 +1,11 @@
+{% extends "comps/base.html" %}
+{% block title %}Домашняя страница{% endblock title %}
+
+{% block main %}
+    <div style="font-size: 27px;font-weight: 600;color: blue;">Главные Заголовки Новостей</div>
+    <div style="display: flex;flex-direction:row;flex-wrap:wrap;justify-content:space-between">
+    {% for new in news_list %}
+        <div style="max-width:270px;border:2px solid blue;border-radius:15px;padding:10px;margin:10px;">{{ new }}</div>
+    {% endfor %}
+    </div>
+{% endblock main %}

@@ -1,0 +1,46 @@
+{% extends "comps/base.html" %}
+{% load my1_filters_and_tags %}
+{% block title %}Добавить Вакансию{% endblock title %}
+
+{% block main %}
+{% if error %}
+    <div>{{ error }}</div>
+{% endif %}
+<form action="{% url 'vacan_create' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h1 align="center" class="crt">Заполните поля вакансии: </h1>
+    <div class="">
+        <table style="width:100%">
+          <tr>
+            <td style="width:50%"><label class="jobIn" for="title">Должность:</label></td>
+          </tr>
+          <tr>
+            <td><input name="job" type="text" class="jobInput" id="title" placeholder="..." minlength="5" maxlength="200" required></td>
+          </tr>
+
+          <tr>
+            <td><label for="description" class="jobIn">Описание поста:</label></td>
+          </tr>
+          <tr>
+            <td><textarea id="description" name="description" class="txtArea" rows="5" minlength="5" maxlength="5000" required placeholder="..."></textarea></td>
+          </tr>
+
+          <tr>
+            <td><label for="file" class="jobIn">Конктакты:</label></td>
+          </tr>
+          <tr>
+            <td><textarea id="contacts" name="contacts" class="txtArea" rows="5" minlength="5" maxlength="300" required placeholder="..."></textarea></td>
+          </tr>
+
+          <tr>
+            <td><label for="file" class="jobIn" style="margin-top:10px;">Файл:</label></td>
+          </tr>
+          <tr>
+            <td><input name="file" type="file" class="fileInput"  id="file" placeholder="..."></td>
+          </tr>
+        </table>
+        <button class="crtBtn" type="submit">СОЗДАТЬ</button>
+    </div>
+    </form>
+
+{% endblock main %}

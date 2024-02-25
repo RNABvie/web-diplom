@@ -1,0 +1,21 @@
+<nav style="width: 91%; margin:auto;margin-bottom: 55px;height:73px;background-color:white;border-radius:0 0 20px 20px;">
+    <div style="display:flex;justify-content: space-evenly;height: 73px;align-items: center;font-size:20px;">
+        {% if user.is_authenticated %}
+            {% if user.groups.filter %}
+                <a href="/api/swagger/">Модераторство</a>
+            {% endif %}
+            <a href="/">Главная</a>
+            <a href="/business_ideas/">Бизнес идеи</a>
+            <a href="{% url 'vacancy' %}">Вакансии</a>
+            {% for room in rooms %}
+                <a href="/{{room.slug}}">Тех.поддержка</a>
+            {% endfor %}
+            <a style="font-size:15px;" href="{% url 'log_out' %}"><i class='bx bx-log-out'></i>Выйти с аккаунта</a>
+
+        {% else %}
+            <a href="{% url 'log_in' %}"><i class='bx bxs-log-in'></i>Войти в аккаунт</a>
+            <a href="{% url 'register' %}">*Создать в аккаунт</a>
+        {% endif %}
+
+    </div>
+</nav>
